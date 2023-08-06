@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8ºB - Smart Energy</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body class="container mx-auto lg:hidden p-2">
+
+    <!-- Fake Loading Page -->
+    <div id="loading" class="flex flex-col justify-center items-center min-h-screen bg-gray-100">
+      <p class="text-2xl mb-4">Carregando...</p>
+      <div class="loader"></div>
+    </div>
+
+    <!-- Fake Login Page -->
+    <div id="login" class="hidden flex flex-col justify-center items-center h-screen">
+      <div class="bg-yellow-100 p-8 rounded-lg shadow-md flex flex-col items-center mx-4 mt-32">
+        <input id="nameInput" type="text" placeholder="Qual o seu nome?" class="border p-2 mb-4 w-64">
+        <button id="enterButton" class="bg-yellow-500 text-white p-2 hover:bg-yellow-600 rounded-md">Entrar</button>
+      </div>
+    </div>
+
+    <!-- Main Page -->
+    <div id="main" class="hidden flex flex-col justify-center items-center h-4/6">
+      <h1 id="greeting" class="text-3xl text-center mt-4"></h1>
+
+      <div class="w-5/6 mx-auto flex justify-around mt-8">
+        <button type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">+ Ganhos</button>
+        <span class="font-bold text-2xl text-green-500 border-2 rounded-full border-green-500 py-2 px-4 inline-flex justify-center items-center gap-2">&dollar;</span>
+        <button type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">- Despesas</button>
+      </div>
+
+      <div class="text-3xl text-center mt-8">Total: R$ <span id="total">0,00</span></div>
+
+      <button></button>
+    </div>
+
+    <!-- List Page -->
+    <div id="list" class="hidden flex flex-col justify-center items-center h-4/6">
+      <h1 id="listLabel" class="text-3xl text-center mt-4"></h1>
+
+      <div>
+        <input type="text">
+        <input type="text">
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
