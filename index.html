@@ -11,12 +11,10 @@
 
 <body class="container mx-auto lg:hidden p-2">
 
-
   <div id="loading" class="flex flex-col justify-center items-center min-h-screen bg-gray-100">
     <p class="text-2xl mb-4">Carregando...</p>
     <div class="loader"></div>
   </div>
-
 
   <div id="login" class="hidden flex flex-col items-center h-screen">
     <div class="bg-yellow-100 p-8 rounded-lg shadow-md flex flex-col items-center mx-4 mt-32">
@@ -25,33 +23,40 @@
     </div>
   </div>
 
-
   <div id="main" class="hidden flex flex-col items-center h-4/6">
     <h1 id="greeting" class="text-3xl text-center mt-4"></h1>
 
-
-    <div class="w-5/6 mx-auto flex justify-around mt-8">
-      <button id="incomesBtn" type="button"
-        class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">+
-        Ganhos</button>
-      <span
-        class="font-bold text-2xl text-green-500 border-2 rounded-full border-green-500 py-2 px-4 inline-flex justify-center items-center gap-2">&dollar;</span>
-      <button id="expensesBtn" type="button"
-        class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">-
-        Despesas</button>
+    <div class="w-5/6 mx-auto flex justify-around mt-4">
+      <button id="incomesBtn" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-green-500 text-white hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">+ Ganhos</button>
+      <span class="font-bold text-2xl text-green-500 border-2 rounded-full border-green-500 py-2 px-4 inline-flex justify-center items-center gap-2">&dollar;</span>
+      <button id="expensesBtn" type="button" class="py-3 px-4 inline-flex justify-center items-center gap-2 rounded-md border border-transparent font-semibold bg-red-500 text-white hover:bg-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 transition-all text-sm dark:focus:ring-offset-gray-800">- Despesas</button>
     </div>
 
+    <div class="text-xl text-center mt-4">Saldo: R$ <span id="total">0,00</span></div>
 
-    <div class="text-3xl text-center mt-8">Total: R$ <span id="total">0,00</span></div>
+    <div class="border-t-2 border-solid border-gray-500 mt-4 pt-4 flex flex-col w-full">
+      <div class="text-xl text-center">Calcular gasto elétrico:</div>
+      <button id="energyBtn" type="button" class="text-green-700 border-2 border-green-700 rounded-lg bg-green-50 mt-4 mb-2 w-4/5 mx-auto">
+        <img src="./media/energy_btn.png" alt="energy_calculation_button" class="h-24 w-24 m-auto">
+      </button>
+      <div class="text-xl text-center mt-2">Custo elétrico: R$ <span id="total">0,00</span></div>
+    </div>
 
-
-    <button></button>
+    <div class="border-t-2 border-solid border-gray-500 mt-4 pt-2 flex flex-col w-full">
+      <span><strong>Grupo:</strong></span>
+      <ul>
+        <li>- Adam Serafim Felix</li>
+        <li>- Amanda Toniato</li>
+        <li>- Emanuele Alves</li>
+        <li>- Giulia Fonseca</li>
+        <li>- João Pedro Coser</li>
+        <li>- Henrique Brites</li>
+      </ul>
+    </div>
   </div>
-
 
   <div id="list" class="hidden flex flex-col items-center h-4/6">
     <h1 id="listLabel" class="text-3xl text-center mt-4"></h1>
-
 
     <div class="my-4 grid grid-cols-2 gap-2">
       <input id="textItem" type="text" placeholder="Descrição" class="border p-2">
@@ -60,10 +65,27 @@
       <button id="returnButton" class="bg-white text-blue-500 p-2 rounded-md">Voltar</button>
     </div>
 
-
     <ul id="itemsList" class="w-full"></ul>
   </div>
 
+  <div id="energyList" class="hidden flex flex-col items-center h-4/6">
+    <h1 id="energyListLabel" class="text-3xl text-center mt-4"></h1>
+
+    <div class="my-4 grid grid-cols-4 gap-2">
+      <input id="kWhValue" type="number" placeholder="Custo kWh" class="border p-2">
+      <div class="">R$ <span id="currentValue">0.00</span></div>
+      <button id="returnButton" class="bg-white text-blue-500 p-2 rounded-md col-span-2">Voltar</button>
+      <button id="addkWhButton" class="bg-blue-500 text-white p-2 rounded-md">kWh</button>
+    </div>
+
+    <hr>
+
+    <div class="my-4 grid grid-cols-2 gap-2">
+      <input id="textItem" type="text" placeholder="Descrição" class="border p-2">
+      <input id="numberItem" type="number" placeholder="Valor R$" class="border p-2">
+      <button id="addItemButton" class="bg-blue-500 text-white p-2 rounded-md">Adicionar</button>
+    </div>
+  </div>
 
   <script src="app.js"></script>
 </body>
