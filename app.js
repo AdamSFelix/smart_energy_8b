@@ -32,16 +32,16 @@ const returnButton = document.getElementById('returnButton');
 let currentList = '';
 let balance = 0.0;
 
-const energyListDiv = document.getElementById('energyList');
 const returnMainButton = document.getElementById('returnMainButton');
 const addkWhButton = document.getElementById('addkWhButton');
+const addItemEnergyButton = document.getElementById('addItemEnergyButton');
+const energyListDiv = document.getElementById('energyList');
 const energyKWhInput = document.getElementById('kWhValue');
 const currentKWhValue = document.getElementById('currentKWhValue');
 const energyItemsList = document.getElementById('energyItemsList');
 const energyItemInput = document.getElementById('energyItem');
 const energyValueInput = document.getElementById('valueItem');
 const energyHoursInput = document.getElementById('hoursItem');
-const addItemEnergyButton = document.getElementById('addItemEnergyButton');
 const energyTotalSpan = document.getElementById('energyTotal');
 let currentKWh = 0.0;
 
@@ -173,6 +173,7 @@ addkWhButton.addEventListener('click', () => {
   if (kWh.trim() !== '') {
     const energy = fetchFromStorage('energy') || { ...SEDataStorageSchema.energy };
     const parsedKWh = parseFloat(kWh).toFixed(2);
+    currentKWh = parsedKWh;
     energy.kWh = parsedKWh;
     saveInStorage('energy', energy);
     currentKWhValue.textContent = parsedKWh;
@@ -187,6 +188,16 @@ itemsListUl.addEventListener('click', (e) => {
     items.splice(index, 1);
     saveInStorage(currentList, items);
     showListItems(items);
+  }
+});
+
+energyItemsList.addEventListener('click', (e) => {
+  if (e.target.tagName === 'BUTTON') {
+    const index = e.target.getAttribute('data-index');
+    const energy = fetchFromStorage('energy');
+    energy.energyExpenses.splice(index, 1);
+    saveInStorage('energy', energy);
+    showEnergyItems(energy.energyExpenses);
   }
 });
 
