@@ -14,7 +14,7 @@ const mainDiv = document.getElementById('main');
 const nameInput = document.getElementById('nameInput');
 const enterButton = document.getElementById('enterButton');
 const greeting = document.getElementById('greeting');
-const loadTime = 500;
+const loadTime = 2000;
 const totalSpan = document.getElementById('total');
 
 const incomesBtn = document.getElementById('incomesBtn');
